@@ -30,4 +30,22 @@ public class FilaDinamica {
         }
         
     }
+    private No prim;
+    private No ult;
+    private int tamanho;
+    // construtor padrão só;
+
+    public boolean estaVazia(){
+        return tamanho == 0;
+    }
+
+    public void enfilera(int i){
+        No novo = new No(i);
+        if(estaVazia())
+            prim = novo;
+        else
+            ult.setProx(novo);
+        ult = novo;
+        tamanho++;
+    }
 }
