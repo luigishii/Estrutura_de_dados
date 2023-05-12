@@ -12,5 +12,7 @@ public class OutroTeste {
             if(!f.estaVazia())
             System.out.println(f.desenfilera() + " foi atendido");
         }
+        System.out.println(f);
+        System.out.println(f.oVetor());
     }    
 }
