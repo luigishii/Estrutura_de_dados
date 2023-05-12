@@ -67,5 +67,6 @@ public class FilaEstatica{
         for (int i=prim; i<dados.length; i++)
             s+= dados[i] + " "; 
     }
+        return s;
 }
 }
