@@ -5,7 +5,7 @@ public class MaisUmTeste {
         Random r = new Random();
         FilaDinamica f = new FilaDinamica();
         do{
-            if(r.nextInt(2) ==0 ){//enfileirar
+            if(r.nextInt(2) == 0 ){//enfileirar
                 f.enfilera(r.nextInt(10));
             }
             else{ //desenfileira
