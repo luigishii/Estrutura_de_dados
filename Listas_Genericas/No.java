@@ -25,4 +25,10 @@ public class No<T> {
         this.prox = prox;
     }
     
+    @Override
+    public String toString(){
+       
+        return "|" + info + "|->";
+
+    }
 }
