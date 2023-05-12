@@ -48,4 +48,13 @@ public class FilaDinamica {
         ult = novo;
         tamanho++;
     }
+    public int desenfilera(){
+        int i = prim.getInfo();
+        tamanho--;
+        prim = prim.getProx();
+        if(prim ==null){
+            ult = null;
+        }
+        return i;
+    }
 }
