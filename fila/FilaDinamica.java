@@ -48,6 +48,7 @@ public class FilaDinamica {
         ult = novo;
         tamanho++;
     }
+
     public int desenfilera(){
         int i = prim.getInfo();
         tamanho--;
@@ -56,5 +57,20 @@ public class FilaDinamica {
             ult = null;
         }
         return i;
+    }
+
+    @Override
+    public String toString(){
+        String s = "fila: ";
+        if(estaVazia()) s+= "vazia";
+        else{
+            No runner = prim;
+            while(runner!=null){
+                s+= runner + " ";
+                runner = runner.getProx();
+            }
+        }
+        return s;
+
     }
 }
