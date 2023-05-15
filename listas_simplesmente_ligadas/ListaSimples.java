@@ -1,10 +1,10 @@
 public class ListaSimples {
     private No primeiro;
+    int tamanho;
     //por clareza
     public ListaSimples () {
         setPrimeiro(null);
     }
-    //métodos de acesso
     public No getPrimeiro() {
         return this.primeiro;
     }
@@ -21,6 +21,8 @@ public class ListaSimples {
         }
         setPrimeiro(novo);
     }
+
+
     @Override
     public String toString () {
         //String msg = "lista: ";
@@ -72,14 +74,95 @@ public class ListaSimples {
         }
         return copia;
     }
-    public int tamanhoLista () {}
-    public boolean buscaX (int x) {}
-    public void insereNaPosicao (int i, int pos) {}
-    public int removeDaPosicao (int pos) {}
-    public boolean removePrimeiroX (int x) {}
-    public int removeTodosX (int x) {}
+    public int busca (int x) {
+        int encontrado = 0;
+        No aux = this.primeiro;
+        return encontrado;   
+    }
+    public boolean buscaX (int x) {
+        No aux = this.primeiro;
+        while (aux != null) { //busca x na lista
+            if (aux.getInfo() == x) {
+                return true;
+            }
+            else{
+                aux = aux.getProximo();
+                }
+        }
+        return false;
 
-    //implementar nova lista simplesmente ligada, acrescentando o atributo
-    //tamanhoDaLista
+    }
+    public void insereNaPosicao (int i, int pos) {
+        if (i > tamanho) {
+            System.out.println("Posição inválida");
+        }
+        else {
+            No aux = this.primeiro;
+            if (i == 1) { //inserindo primeiro
+                No novo = new No(pos);
+                novo.setProximo(aux);
+                this.setPrimeiro(novo);
+            }
+        }
+    }
+    public int removeDaPosicao (int pos) {
+        if (pos > tamanho) {
+            System.out.println("Posição inválida");
+        }
+        else{
+            No aux = this.primeiro;
+            if (pos == 1) { //removendo primeiro
+                No novo = aux.getProximo();
+                this.setPrimeiro(novo);
+                return aux.getInfo();
+            }
+            else{
+                No novo = aux.getProximo();
+                No aux2 = aux.getProximo();
+                while (aux2 != null) { //removendo o nó após o primeiro
+                    if (aux2.getInfo() == pos) {
+                        aux.setProximo(aux2.getProximo());
+                        return aux2.getInfo();
+                    }
+                }
+            }
+        }
+        return pos;
+    }
+    public boolean removePrimeiroX (int x) {
+        if (this.tamanho == 0) { //lista vazia
+            return false;
+        }
+        else {
+            No aux = this.primeiro;
+            if (aux.getInfo() == x) { //removendo o primeiro
+                No novo = aux.getProximo();
+                this.setPrimeiro(novo);
+                return true;
+            }
+            else {
+                No aux2 = aux.getProximo();
+                while (aux2 != null) { //removendo o nó após o primeiro
+                    if (aux2.getInfo() == x) {
+                        aux.setProximo(aux2.getProximo());
+                        return true;
+                    }
+                    aux = aux2;
+                    aux2 = aux2.getProximo();
+                }
+            }    
+        }
+        return false;
+    }
+
+    public int getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(int tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    
 
 }

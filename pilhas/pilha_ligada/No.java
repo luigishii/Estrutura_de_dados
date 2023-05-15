@@ -2,8 +2,8 @@ public class No {
     private char info;
     private No proximo;
 
-    public No (char info) {
-        this.info = info;
+    public No (int i) {
+        this.info = i;
         this.proximo = null;
     }
 
@@ -14,8 +14,8 @@ public class No {
         return this.proximo;
     }
 
-    public void setInfo (char info) {
-        this.info = info;
+    public void setInfo (int i) {
+        this.info = i;
     }
     public void setProximo (No proximo) {
         this.proximo = proximo;
@@ -23,5 +23,11 @@ public class No {
     @Override
     public String toString () {
         return "|" + this.info + "|->";
+    }
+
+    public int removeTodosX (int x) {}
+
+    public int getTamanho(ListaSimples listaSimples){
+        return listaSimples.tamanho;
     }
 }
