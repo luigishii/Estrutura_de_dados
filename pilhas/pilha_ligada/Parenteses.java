@@ -4,7 +4,7 @@ public class Parenteses {
         Scanner scanner = new Scanner(System.in);
         System.out.print ("digite sua expressao: ");
         String expressao = scanner.next();
-        Pilha p = new Pilha();
+        Pilha p = new Pilha(0);
         int i=0;
         boolean erro = false;
         while (i<expressao.length() && !erro){
