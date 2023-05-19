@@ -1,6 +1,7 @@
 package arvore;
 
 
+
 import java.util.Random;
 
 public class TesteArvoreBinariaBusca {
@@ -12,6 +13,7 @@ public class TesteArvoreBinariaBusca {
             System.out.print(n + " ");
             abb.insere(n);
         }
-        System.out.println("\n\n" + abb.exibeEmOrdem());
+        
+        System.out.println("\n \n" + abb.exibePosOrdem());
     }
 }

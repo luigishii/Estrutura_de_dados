@@ -3,6 +3,7 @@ package arvore;
 
 
 
+
 public class ArvoreBinariaDeBusca {
     private class NoBin { // NoBin = Nó Binário
         private int info;
@@ -92,7 +93,41 @@ public class ArvoreBinariaDeBusca {
         }       
         else{
             return " ";
-        }
+       }
     }
     
+    public String exibePosOrdem(){
+
+        if(raiz == null) return "árvore vazia";
+
+        else{
+            return exibePosOrdem(raiz);
+        }
+    }
+
+    private String exibePosOrdem(NoBin atual){
+        if(atual != null){
+            return exibePosOrdem(atual.getEsq()) + exibePosOrdem(atual.getDir()) + (atual.getInfo());
+        }       
+        else{
+            return " ";
+       }
+    }
+
+    public int contaNosPosOrdem(){
+        if(raiz == null) {
+            return 0;
+        }
+        else {
+            return 0;
+        }
+    }
+    public int contaNosPosOrdemRec(NoBin atual){
+        if(atual != null){
+            return contaNosPosOrdemRec(atual.getEsq()) + (contaNosPosOrdemRec(atual.getDir())) + 1;
+        }
+        else{
+            return 0;
+        }
+    }
 }
