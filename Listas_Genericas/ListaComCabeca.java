@@ -33,6 +33,7 @@ public class ListaComCabeca<T> {
                 s+= runner;
                 runner = runner.getProx();
             }
+            s+="//";
         }
         return s;
     }
