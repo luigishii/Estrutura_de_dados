@@ -1,6 +1,7 @@
 package arvore;
 
-import Listas_Genericas.No;
+
+
 
 public class ArvoreBinariaDeBusca {
     private class NoBin { // NoBin = Nó Binário
@@ -75,4 +76,23 @@ public class ArvoreBinariaDeBusca {
             }
         }
     }
+    
+    public String exibeEmOrdem(){
+
+        if(raiz == null) return "árvore vazia";
+
+        else{
+            return exibeEmOrdemRec(raiz);
+        }
+    }
+
+    private String exibeEmOrdemRec(NoBin atual){
+        if(atual != null){
+            return exibeEmOrdemRec(atual.getEsq()) + (atual.getInfo()) + exibeEmOrdemRec(atual.getDir());
+        }       
+        else{
+            return " ";
+        }
+    }
+    
 }
