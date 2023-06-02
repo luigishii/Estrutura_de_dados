@@ -1,4 +1,4 @@
-package arvore;
+
 
 
 
@@ -14,8 +14,14 @@ public class TesteArvoreBinariaBusca {
             int n = r.nextInt(50); // n assume o valor de um r tem um raio de até 50
             System.out.print(n + " ");
             abb.insere(n); // abb usa o metodo de inserir para inserir o valor n na lista  
+            abb.contaNosFolha();
+            abb.contaNosNaoFolha();
+            abb.exibeMaiorNumero();
         }
         
         System.out.println("\n \n" + abb.exibeEmOrdem()); // printa a lista ja ordenada
+        System.out.println("\n \n" + abb.contaNosFolha());
+        System.out.println("\n \n" + abb.contaNosNaoFolha());
+        System.out.println("\n \n" + abb.exibeMaiorNumero());
     }
 }

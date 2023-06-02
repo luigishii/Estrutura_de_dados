@@ -1,4 +1,4 @@
-package arvore;
+
 
 
 public class ArvoreBinariaDeBusca {
@@ -121,10 +121,120 @@ public class ArvoreBinariaDeBusca {
     }
     public int contaNosPosOrdemRec(NoBin atual){
         if(atual != null){ // se há valor na raiz
-            return contaNosPosOrdemRec(atual.getEsq()) + (contaNosPosOrdemRec(atual.getDir())) + 1; //retorna o numero de nós a esquerda da raiz mais o numero de nós à direita da raiz + 1
+            return contaNosPosOrdemRec(atual.getEsq()) + (contaNosPosOrdemRec(atual.getDir())) + 1; //retorna o numero de nós a esquerda da raiz mais o numero de nós à direita da raiz + o valor dele mesmo
         }
         else{ // se não há valor na raiz 
             return 0; //retorna 0
         }
     }
+                /// ex1
+    public int contaNosFolha(){
+        if(raiz != null){ // se há valor na raiz
+            return contaNosFolhaRec(raiz);
+        }    
+        else{
+            return 0;
+        }
+    }
+    /// ex2
+    public int contaNosFolhaRec(NoBin atual){
+        if(atual != null){
+            if(atual.getEsq() == null){
+                if(atual.getDir() == null){
+                    return contaNosFolhaRec(atual.getEsq()) + contaNosFolhaRec(atual.getDir());
+                }
+                else{
+                    return contaNosFolhaRec(atual.getEsq()) + contaNosFolhaRec(atual.getDir());
+                }
+            }
+            else{
+                return contaNosFolhaRec(atual.getEsq()) + contaNosFolhaRec(atual.getDir());
+            }
+        }
+        else{
+            return 1;
+        }
+    }
+/// ex3
+    public int contaNosNaoFolha(){
+        if(raiz != null){ // se há valor na raiz
+            return contaNosNaoFolhaRec(raiz);
+        }    
+        else{
+            return 0;
+        }
+    }
+
+    public int contaNosNaoFolhaRec(NoBin atual){
+        if(atual != null){
+            if(atual.getEsq() == null){
+                if(atual.getDir() == null){
+                    return 0;
+                }
+                else{
+                    return contaNosNaoFolhaRec(atual.getDir()) + 1; 
+                }
+            }
+            else{
+                return contaNosNaoFolhaRec(atual.getEsq()) + contaNosNaoFolhaRec(atual.getDir()) + 1;
+            }
+        }
+        else{
+            return 0;
+        }
+    }
+
+    public int exibeMaiorNumero(){
+        if(raiz == null) return 0; // se nao tem raiz é pq a arvore esta vazia
+
+        else{ // existe um valor na raiz
+            return exibeMaiorRec(raiz); 
+        }
+    }
+
+    private int exibeMaiorRec(NoBin atual){
+        if(atual == null){
+            return 0;
+        }
+        else{
+            if(atual.getDir() == null){
+                return atual.getInfo();
+            }
+            else{
+                return exibeMaiorRec(atual.getDir());
+            }
+        }
+    }
+
+    public void insereEspelho(int i){
+        NoBin novo = new NoBin(i); //disponibiliza um novo nó para carregar o número
+        if(raiz == null){ //se a raiz está vazia 
+            raiz = novo; //coloca o valor que está no nó(novo) no lugar da raiz
+        }
+        else{
+            insereEspelhoRec(raiz, novo); //o novo valor é colocado na Direita ou na esquerda de acordo com o valor da raiz
+        }
+    }
+
+    private void insereEspelhoRec(NoBin atual, NoBin novo){
+        if(novo.getInfo() <= atual.getInfo()){ //se o novo valor for <= ao valor atual(raiz)
+            if(atual.getDir()==null){   //se o valor à direita da raiz está vazia
+                atual.setDir(novo);// coloca o novo valor na direita
+            }
+            else{
+                insereRec(atual.getDir(), novo); //se o valor à direita da raiz está cheio, repete o método e o aplica denovo
+            }
+        }
+        else{ //se o novo valor for > que o valor atual(raiz)
+            if(atual.getEsq()==null){ //se nao tem nenhum numero à esquerda da raiz
+                atual.setEsq(novo); // coloca o novo valor na esquerda da raiz
+            }
+            else{ //se existe algum número na esquerda da raiz
+                insereRec(atual.getEsq(), novo); //se o valor à esquerda da raiz está cheio, repete o método e o aplica denovo
+            }
+        }
+    }
+
+    
+
 }
