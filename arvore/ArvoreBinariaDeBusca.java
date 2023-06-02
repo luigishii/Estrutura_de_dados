@@ -1,5 +1,6 @@
 package arvore;
 
+
 public class ArvoreBinariaDeBusca {
     private class NoBin { // NoBin = Nó Binário
         private int info;
