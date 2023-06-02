@@ -1,4 +1,4 @@
-package arvore;
+
 
 
 
@@ -184,7 +184,7 @@ public class ArvoreBinariaDeBusca {
             return 0;
         }
     }
-
+//ex4
     public int exibeMaiorNumero(){
         if(raiz == null) return 0; // se nao tem raiz é pq a arvore esta vazia
 
@@ -206,7 +206,7 @@ public class ArvoreBinariaDeBusca {
             }
         }
     }
-
+//ex5
     public void insereEspelho(int i){
         NoBin novo = new NoBin(i); //disponibiliza um novo nó para carregar o número
         if(raiz == null){ //se a raiz está vazia 
@@ -235,7 +235,32 @@ public class ArvoreBinariaDeBusca {
             }
         }
     }
+//ex 7
+    public boolean estritamenteBinaria(){
+        return estritamenteBinariaRec(raiz);
+    }
 
+    public boolean estritamenteBinariaRec(NoBin atual){
+        if(atual != null){
+            if(atual.getEsq()== null){ 
+                return false;
+            }
+            else{
+                if(atual.getDir() == null){
+                    return false;
+                }
+                else{
+                    if (estritamenteBinariaRec(atual.getEsq()) && estritamenteBinariaRec(atual.getDir()) == true){
+                        return true;
+                    };
+                }
+            }
+        }
+        else{
+            return false;
+        }
+        return false;
+    }
     
 
 }

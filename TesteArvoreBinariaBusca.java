@@ -1,4 +1,4 @@
-package arvore;
+
 
 
 
@@ -18,11 +18,13 @@ public class TesteArvoreBinariaBusca {
             abb.contaNosFolha();
             abb.contaNosNaoFolha();
             abb.exibeMaiorNumero();
+            abb.estritamenteBinaria();
         }
         
         System.out.println("\n \n" + abb.exibeEmOrdem()); // printa a lista ja ordenada
         System.out.println("\n \n" + abb.contaNosFolha());
         System.out.println("\n \n" + abb.contaNosNaoFolha());
         System.out.println("\n \n" + abb.exibeMaiorNumero());
+        System.out.println("\n \n" + abb.estritamenteBinaria());
     }
 }
