@@ -1,3 +1,5 @@
+package fila;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -28,15 +30,15 @@ public class FilaEstatica {
         return (pos + 1) % dados.length; //proxima retorna o valor da posicao mais 1
     }
     public void enfilera(int i) {
-        dados[ult] = i;
-        ult = proxima(ult);
-        tamanho++;
+        dados[ult] = i; //a ultima posicao do vetor com o tamanho dado pelos dados é igual a i agora
+        ult = proxima(ult); // o ultimo agora é o proximo ao ultimo ( o que foi inserido)
+        tamanho++; // tamanho do vetor aumenta em 1
     }
     public int desenfilera() {
-        int i = dados[prim];
-        prim = proxima(prim);
-        tamanho--;
-        return i;
+        int i = dados[prim];  // i é o valor que esta na primeira posicao do vetor de acordo com os dados
+        prim = proxima(prim); // primeiro agora é o proximo a ele e o primeiro sai
+        tamanho--; // tamanho diminui em 1
+        return i; // retorna o vetor
     }
 
     public static Queue<Integer> mergeQueues(

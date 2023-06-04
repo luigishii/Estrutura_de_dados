@@ -1,3 +1,5 @@
+package fila;
+
 import java.util.Random;
 
 public class MaisUmTeste {

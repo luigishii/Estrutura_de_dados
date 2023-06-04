@@ -251,7 +251,7 @@ public class ArvoreBinariaDeBusca {
                     return false;
                 }
                 else{
-                    if (estritamenteBinariaRec(atual.getEsq()) && estritamenteBinariaRec(atual.getDir()) == true){
+                    if (estritamenteBinariaRec(atual.getEsq()) && estritamenteBinariaRec(atual.getDir()) ){
                         return true;
                     };
                 }
