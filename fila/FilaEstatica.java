@@ -99,4 +99,17 @@ public class FilaEstatica {
             }
         return s;
     }
+
+    public int posicaoDeX(int x) {
+        int posicaoVetor = prim;
+        int posicao = 1;
+        while (posicao <= tamanho) {
+            if (x == dados[posicaoVetor]) {
+                return posicao;
+            }
+            posicaoVetor = proxima(posicaoVetor);
+            posicao++;
+        }
+        return -1;
+    }
 }

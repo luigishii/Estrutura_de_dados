@@ -143,14 +143,14 @@ public class ArvoreBinariaDeBusca {
         if(atual != null){
             if(atual.getEsq() == null){
                 if(atual.getDir() == null){
-                    return contaNosFolhaRec(atual.getEsq()) + contaNosFolhaRec(atual.getDir());
+                    return contaNosFolhaRec(atual.getEsq()) + contaNosFolhaRec(atual.getDir()) + 1;
                 }
                 else{
-                    return contaNosFolhaRec(atual.getEsq()) + contaNosFolhaRec(atual.getDir());
+                    return contaNosFolhaRec(atual.getEsq()) + contaNosFolhaRec(atual.getDir()) + 1;
                 }
             }
             else{
-                return contaNosFolhaRec(atual.getEsq()) + contaNosFolhaRec(atual.getDir());
+                return contaNosFolhaRec(atual.getEsq()) + contaNosFolhaRec(atual.getDir()) + 1;
             }
         }
         else{
